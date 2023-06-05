@@ -15,6 +15,7 @@ import 'package:flutter_camera_example/pages/custom_ui_example_1.dart';
 import 'package:flutter_camera_example/pages/custom_ui_example_2.dart';
 import 'package:flutter_camera_example/pages/custom_ui_example_3.dart';
 import 'package:flutter_camera_example/pages/drivable_camera.dart';
+import 'package:flutter_camera_example/pages/preview_overlay_example.dart';
 import 'package:path_provider/path_provider.dart';
 
 void main() => runApp(const MyApp());
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
                   _openCustomUIExample3Page(context),
                   _openCustomThemePage(context),
                   _openDrivableCameraPage(context),
+                  _openPreviewOverlayExamplePage(context)
                 ],
               ),
             );
@@ -201,5 +203,17 @@ class MyApp extends StatelessWidget {
               ));
         },
         child: const Text("Open Drivable Camera"));
+  }
+
+  ElevatedButton _openPreviewOverlayExamplePage(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const PreviewOverlayExamplePage(),
+              ));
+        },
+        child: const Text("Open Preview Overlay Example"));
   }
 }
