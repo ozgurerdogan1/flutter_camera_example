@@ -11,6 +11,7 @@ class CameraAwesomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CameraAwesomeBuilder.awesome(
+      
       saveConfig: SaveConfig.photoAndVideo(),
       onMediaTap: (mediaCapture) {
         OpenFile.open(mediaCapture.captureRequest.when(

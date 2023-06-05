@@ -5,7 +5,16 @@ import 'package:camerawesome/camerawesome_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_camera_example/pages/ai_analysis_barcode.dart';
 import 'package:flutter_camera_example/pages/ai_analysis_faces%20.dart';
+import 'package:flutter_camera_example/pages/analysis_image_filter.dart';
+import 'package:flutter_camera_example/pages/analysis_image_filter_picker.dart';
+import 'package:flutter_camera_example/pages/camera_analysis_capabilities.dart';
 import 'package:flutter_camera_example/pages/camera_awesome.dart';
+import 'package:flutter_camera_example/pages/custom_awesome_ui.dart';
+import 'package:flutter_camera_example/pages/custom_theme.dart';
+import 'package:flutter_camera_example/pages/custom_ui_example_1.dart';
+import 'package:flutter_camera_example/pages/custom_ui_example_2.dart';
+import 'package:flutter_camera_example/pages/custom_ui_example_3.dart';
+import 'package:flutter_camera_example/pages/drivable_camera.dart';
 import 'package:path_provider/path_provider.dart';
 
 void main() => runApp(const MyApp());
@@ -29,6 +38,15 @@ class MyApp extends StatelessWidget {
                   _openCameraAwesome(context),
                   _openBarcodeAnalysis(context),
                   _openFaceAnalysis(context),
+                  _openImageFilter(context),
+                  _openImageFilterPicker(context),
+                  _openCameraAnalysisCapabilitiesPage(context),
+                  _openCustomAwesomeUIPage(context),
+                  _openCustomUIExample1Page(context),
+                  _openCustomUIExample2Page(context),
+                  _openCustomUIExample3Page(context),
+                  _openCustomThemePage(context),
+                  _openDrivableCameraPage(context),
                 ],
               ),
             );
@@ -70,5 +88,118 @@ class MyApp extends StatelessWidget {
               ));
         },
         child: const Text("Open Face Analysis"));
+  }
+
+  ElevatedButton _openImageFilter(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ImageFilterPage(),
+              ));
+        },
+        child: const Text("Open Image Filter"));
+  }
+
+  ElevatedButton _openImageFilterPicker(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ImageFilterPickerPage(),
+              ));
+        },
+        child: const Text("Open Image Filter Picker"));
+  }
+
+  ElevatedButton _openCameraAnalysisCapabilitiesPage(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CameraAnalysisCapabilitiesPage(),
+              ));
+        },
+        child: const Text("Open Camre Analysis Capabilites"));
+  }
+
+  ElevatedButton _openCustomAwesomeUIPage(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CustomAwesomeUIPage(),
+              ));
+        },
+        child: const Text("Open Custom Awesome UI"));
+  }
+
+  ElevatedButton _openCustomUIExample1Page(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CustomUiExample1Page(),
+              ));
+        },
+        child: const Text("Open Custom UI Example 1"));
+  }
+
+  ElevatedButton _openCustomUIExample2Page(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CustomUiExample2Page(),
+              ));
+        },
+        child: const Text("Open Custom UI Example 2"));
+  }
+
+  ElevatedButton _openCustomUIExample3Page(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CustomUiExample3Page(),
+              ));
+        },
+        child: const Text("Open Custom UI Example 3"));
+  }
+
+  ElevatedButton _openCustomThemePage(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CustomThemePage(),
+              ));
+        },
+        child: const Text("Open Custom Theme"));
+  }
+
+  ElevatedButton _openDrivableCameraPage(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DrivableCameraPage(
+                  saveConfig: SaveConfig.photoAndVideo(),
+                  sensors: [
+                    Sensor.position(SensorPosition.back),
+                  ],
+                ),
+              ));
+        },
+        child: const Text("Open Drivable Camera"));
   }
 }
